@@ -4,7 +4,7 @@ var currentWeather = $('#current-weather');
 var fiveDayForecast = $('#five-day-forecast');
 
 document.getElementById("search").on("click", function(){
-    if (document.getElementById("search-field") !== null) {
+    if (document.getElementById("city-input") !== null) {
         
     }
-}
+})

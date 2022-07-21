@@ -22,15 +22,31 @@
         <h1>Weather Dashboard</h1>
     </header>
     <aside class="container-fluid">
-        <h2>Search for a City:</h2>
-        <input type="text" placeholder="city name">
-        <button class="bg-primary">Search</button>
-        <!-- Empty ul to populate with searched cities -->
-        <ul></ul>
+        <div class="row">
+            <div class="col-12">
+                <h2>Search for a City:</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <input type="text" placeholder="city name" id="city-input">
+                <button class="bg-primary text-white" id="search-button">Search</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Empty ul to populate with lis of searched cities -->
+                <ul></ul>
+            </div>
+        </div>
     </aside>
-    <main>
-        <div id="current-weather"></div>
-        <div id="five-day-forecast"></div>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <div id="current-weather"></div>
+                <div id="five-day-forecast"></div>
+            </div>
+        </div>
     </main>
     <!-- Link to jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
