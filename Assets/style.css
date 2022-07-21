@@ -1,0 +1,4 @@
+/* Apply external font to website */
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+}

@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- Link to external font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!-- Link to local css file -->
+    <link rel="stylesheet" href="./Assets/style.css">
     <title>Weather Dashboard</title>
 </head>
 <body>
-    
+    <header class="container-fluid text-center text-white bg-info p-2">
+        <h1>Weather Dashboard</h1>
+    </header>
+    <aside class="container-fluid">
+        <h2>Search for a City:</h2>
+        <input type="text" placeholder="city name">
+        <button class="bg-primary">Search</button>
+        <!-- Empty ul to populate with searched cities -->
+        <ul></ul>
+    </aside>
+    <main>
+        <div id="current-weather"></div>
+        <div id="five-day-forecast"></div>
+    </main>
+    <!-- Link to jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Link to moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- Link to local js file -->
+    <script src="./Assets/script.js"></script>
 </body>
 </html>
