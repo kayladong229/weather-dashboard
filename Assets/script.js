@@ -96,11 +96,11 @@ function fetchWeather(cityName) {
                         var date = data.daily[i].dt;
                         var forecastDate = moment.unix(date).format("MM/DD/YYYY");
 
-                        var temp = data.daily[i].temp.day;
+                        var forecastTemp = data.daily[i].temp.day;
                         var iconImg = data.daily[i].weather[0].icon;
                         var iconUrl = 'https://openweathermap.org/img/wn/'+ iconImg + '@2x.png';
-                        var wind = data.daily[i].wind_speed;
-                        var humidity = data.daily[i].humidity
+                        var forecastWind = data.daily[i].wind_speed;
+                        var forecastHumidity = data.daily[i].humidity
                         
                          // Create and stylize cards
                         var card = $('<div>');
@@ -119,11 +119,11 @@ function fetchWeather(cityName) {
                         cardBodyIcon.attr('src', iconUrl);
                         cardBodyIcon.attr('alt', data.daily[i].weather[0].description);
                         var cardBodyTemp = $('<p>')
-                        cardBodyTemp.text(temp + "°F");
+                        cardBodyTemp.text("Temp: " + forecastTemp + "°F");
                         var cardBodyWind = $('<p>');
-                        cardBodyWind.text(wind + "MPH")
+                        cardBodyWind.text("Wind: " + forecastWind + "MPH")
                         var cardBodyHumid = $('<p>');
-                        cardBodyHumid.text(humidity + "%");
+                        cardBodyHumid.text("Humidity: " + forecastHumidity + "%");
 
                         cardBody.append(cardBodyIcon);
                         cardBody.append(cardBodyTemp);
