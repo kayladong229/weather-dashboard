@@ -171,7 +171,7 @@ searchBtn.on("click", function(event) {
     });
 // Retrieve the data of a previously searched city when it is clicked
 $(document).on("click", ".list-group-item", function() {
-        clearWeatherCard();
-        var listCity = $(this).text();
-        fetchWeather(listCity);
+    clearWeatherCard();
+    var listCity = $(this).text();
+    fetchWeather(listCity);
 });
