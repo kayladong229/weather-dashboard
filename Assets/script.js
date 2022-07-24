@@ -63,7 +63,7 @@ function fetchWeather(cityName) {
                     console.log("data", data);
                     var uvIndex = $('<span>');
 
-                    // If UV index is green, color is green; ok is yellow; bad is red
+                    // If UV index is low, color is green; average is yellow; high is red
                     if (data.current.uvi < 3) {
                         uvIndex.attr('class', 'badge badge-success')
                     } else if (data.current.uvi >=3 && data.current.uvi < 8) {
@@ -92,7 +92,7 @@ function fetchWeather(cityName) {
                     $('#five-day-forecast-header').addClass("d-inline");
 
                     for (var i = 1; i <= 5; i++) {
-
+                        // Declare five day forecast variables
                         var date = data.daily[i].dt;
                         var forecastDate = moment.unix(date).format("MM/DD/YYYY");
 
@@ -111,7 +111,7 @@ function fetchWeather(cityName) {
                         card.addClass('m-2');
                         card.addClass('rounded');
                 
-                        // create card body and append
+                        // Create bodies of cards and add information
                         var cardBody = $('<div>');
                         cardBody.attr('class', 'card-body');
                         cardBody.text(forecastDate);
