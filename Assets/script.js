@@ -149,13 +149,13 @@ searchBtn.on("click", function(event) {
     
     var searchedCity = cityInputEl.val();
     fetchWeather(searchedCity);
+    cityInputEl.val("");
     $('#error-message').text("")
     $('.card-body').addClass("d-inline");
     $('.card-body').removeClass("d-none");
     cityHistory.push(searchedCity);
     var lastViewedCity = $('<li class="list-group-item ml-n5">' + searchedCity + '</li>');
     cityListEl.append(lastViewedCity);
-    cityInputEl.val("");
     localStorage.setItem("search", JSON.stringify(cityHistory));
      // Return an error message if the search button is pressed when nothing is typed in the search field
     if (!searchedCity) {
