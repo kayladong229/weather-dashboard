@@ -143,29 +143,30 @@ function clearWeatherCard () {
 
 //Create an event listener to display weather data when search button is clicked
 searchBtn.on("click", function(event) {
-    // Prevent page from refreshing when a city is being searched
+    // Execute functions
     event.preventDefault();
     clearWeatherCard();
+    
     var searchedCity = cityInputEl.val();
-        fetchWeather(searchedCity);
-        $('#error-message').text("")
-        cityHistory.push(searchedCity);
-        $('.card-body').addClass("d-inline");
-        $('.card-body').removeClass("d-none");
-        var lastViewedCity = $('<li class="list-group-item ml-n5">' + searchedCity + '</li>');
-        cityListEl.append(lastViewedCity);
-        cityInputEl.val("");
-        localStorage.setItem("search", JSON.stringify(cityHistory));
-        // Return an error message if the search button is pressed when nothing is typed in the search field
-        if (!searchedCity) {
-            $('#error-message').text("Please type the name of a city in the search field.");
-            $('#error-message').css('font-size', '24px');
-            $('#error.message').css('font-weight', 'bold');
-            $('.card-body').removeClass("d-inline");
-            $('.card-body').addClass("d-none");
-            $('#five-day-forecast-header').removeClass("d-inline");
-            $('#five-day-forecast-header').addClass("d-none");
-            return;
+    fetchWeather(searchedCity);
+    $('#error-message').text("")
+    $('.card-body').addClass("d-inline");
+    $('.card-body').removeClass("d-none");
+    cityHistory.push(searchedCity);
+    var lastViewedCity = $('<li class="list-group-item ml-n5">' + searchedCity + '</li>');
+    cityListEl.append(lastViewedCity);
+    cityInputEl.val("");
+    localStorage.setItem("search", JSON.stringify(cityHistory));
+     // Return an error message if the search button is pressed when nothing is typed in the search field
+    if (!searchedCity) {
+        $('#error-message').text("Please type the name of a city in the search field.");
+        $('#error-message').css('font-size', '24px');
+        $('#error.message').css('font-weight', 'bold');
+        $('.card-body').removeClass("d-inline");
+        $('.card-body').addClass("d-none");
+        $('#five-day-forecast-header').removeClass("d-inline");
+        $('#five-day-forecast-header').addClass("d-none");
+        return;
         }
     });
 // Retrieve the data of a previously searched city when it is clicked
