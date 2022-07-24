@@ -42,7 +42,7 @@ function fetchWeather(cityName) {
             $('#current-pic').attr('src', iconUrl);
             $('#current-pic').attr('alt', data.weather[0].description);
             tempEl.text("Temperature:" + " " + data.main.temp + "°F");
-            windSpeedEl.text("Wind Speed:" + " " + data.wind.speed + "MPH");
+            windSpeedEl.text("Wind Speed:" + " " + data.wind.speed + " MPH");
             humidEl.text("Humidity:" + " " + data.main.humidity + "%");
 
             // Obtain UV index
@@ -121,7 +121,7 @@ function fetchWeather(cityName) {
                         var cardBodyTemp = $('<p>')
                         cardBodyTemp.text("Temp: " + forecastTemp + "°F");
                         var cardBodyWind = $('<p>');
-                        cardBodyWind.text("Wind: " + forecastWind + "MPH")
+                        cardBodyWind.text("Wind: " + forecastWind + " MPH")
                         var cardBodyHumid = $('<p>');
                         cardBodyHumid.text("Humidity: " + forecastHumidity + "%");
 
