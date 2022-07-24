@@ -174,4 +174,7 @@ $(document).on("click", ".list-group-item", function() {
     clearWeatherCard();
     var listCity = $(this).text();
     fetchWeather(listCity);
+    $('#error-message').text("")
+    $('.card-body').addClass("d-inline");
+    $('.card-body').removeClass("d-none");
 });
