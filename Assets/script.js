@@ -115,7 +115,9 @@ function fetchWeather(cityName) {
                         // Create bodies of cards and add information
                         var cardBody = $('<div>');
                         cardBody.attr('class', 'card-body');
-                        cardBody.text(forecastDate);
+                        var cardBodyDate = $('<p>')
+                        cardBodyDate.text(forecastDate);
+                        cardBodyDate.css('font-weight', 'bold');
                         var cardBodyIcon = $('<img>');
                         cardBodyIcon.attr('src', iconUrl);
                         cardBodyIcon.attr('alt', data.daily[i].weather[0].description);
@@ -126,6 +128,7 @@ function fetchWeather(cityName) {
                         var cardBodyHumid = $('<p>');
                         cardBodyHumid.text("Humidity: " + forecastHumidity + "%");
 
+                        cardBody.append(cardBodyDate);
                         cardBody.append(cardBodyIcon);
                         cardBody.append(cardBodyTemp);
                         cardBody.append(cardBodyWind);
