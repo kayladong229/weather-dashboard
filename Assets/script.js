@@ -72,6 +72,7 @@ function fetchWeather(cityName) {
                         uvIndex.attr('class', 'badge badge-danger')
                     }
                     uvIndex.text(data.current.uvi);
+                    uvIndex.css('font-size', '16px');
                     uvIndexEl.text("UV Index:" + " ");
                     uvIndexEl.append(uvIndex);
                 })
