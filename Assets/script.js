@@ -128,7 +128,7 @@ function fetchWeather(cityName) {
                         var cardBodyHumid = $('<p>');
                         cardBodyHumid.text("Humidity: " + forecastHumidity + "%");
 
-                        // cardBody.append(cardBodyDate);
+                        cardBody.append(cardBodyDate);
                         cardBody.append(cardBodyIcon);
                         cardBody.append(cardBodyTemp);
                         cardBody.append(cardBodyWind);
