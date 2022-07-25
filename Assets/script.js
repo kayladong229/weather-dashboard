@@ -154,7 +154,7 @@ searchBtn.on("click", function(event) {
     $('.card-body').addClass("d-inline");
     $('.card-body').removeClass("d-none");
     cityHistory.push(searchedCity);
-    var lastViewedCity = $('<li class="list-group-item ml-n5">' + searchedCity + '</li>');
+    var lastViewedCity = $('<li class="list-group-item ml-n5 m-3 text-center bg-light">' + searchedCity + '</li>');
     cityListEl.append(lastViewedCity);
     localStorage.setItem("search", JSON.stringify(cityHistory));
      // Return an error message if the search button is pressed when nothing is typed in the search field
