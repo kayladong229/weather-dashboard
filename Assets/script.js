@@ -55,6 +55,7 @@ function fetchWeather(cityName) {
             + lon 
             +"&exclude=hourly,daily&appid=" 
             + apiKey;
+
             fetch(uvQueryUrl)
                 .then(function (response) {
                     return response.json();
@@ -66,7 +67,7 @@ function fetchWeather(cityName) {
                     // If UV index is low, color is green; average is yellow; high is red
                     if (data.current.uvi < 3) {
                         uvIndex.attr('class', 'badge badge-success')
-                    } else if (data.current.uvi >=3 && data.current.uvi < 8) {
+                    } else if (data.current.uvi >= 3 && data.current.uvi < 8) {
                         uvIndex.attr('class', 'badge badge-warning')
                     } else {
                         uvIndex.attr('class', 'badge badge-danger')
@@ -83,6 +84,7 @@ function fetchWeather(cityName) {
             + lon 
             + "&units=imperial&exclude=current,minutely,hourly,alerts&appid=" 
             + apiKey;
+            
             fetch(fiveDayQueryUrl)
                 .then(function (response) {
                     return response.json();
